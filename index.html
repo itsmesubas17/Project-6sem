@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thrifty Finds - Affordable Shopping</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+    <!-- Header/Navbar -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#"><i class="fas fa-recycle"></i> ThriftyFinds</a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button id="userLoginBtn" class="btn">User Login</button>
+                <button id="sellerLoginBtn" class="btn btn-outline">Seller Login</button>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="animate-pop-in">Find Amazing Deals on Pre-Loved Items</h1>
+                <p class="animate-pop-in">Quality second-hand products at affordable prices. Save money and the environment!</p>
+                <div class="search-box animate-pop-in">
+                    <input type="text" placeholder="Search for items...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            <div class="hero-image animate-pop-in">
+                <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Thrifty Finds">
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modals -->
+    <div id="userLoginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>User Login</h2>
+            <form id="userLoginForm">
+                <div class="form-group">
+                    <label for="userEmail">Email</label>
+                    <input type="email" id="userEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="userPassword">Password</label>
+                    <input type="password" id="userPassword" required>
+                </div>
+
+                
+                <!-- Recommendation Questions -->
+                <div class="recommendation-questions">
+                    <h3>Help us recommend better items for you!</h3>
+                    <div class="form-group">
+                        <label>What categories interest you most?</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="interests" value="clothing"> Clothing</label>
+                            <label><input type="checkbox" name="interests" value="electronics"> Electronics</label>
+                            <label><input type="checkbox" name="interests" value="furniture"> Furniture</label>
+                            <label><input type="checkbox" name="interests" value="books"> Books</label>
+                            <label><input type="checkbox" name="interests" value="toys"> Toys</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>What's your typical budget range?</label>
+                        <select id="userBudget">
+                            <option value="0-20">$0 - $20</option>
+                            <option value="20-50">$20 - $50</option>
+                            <option value="50-100">$50 - $100</option>
+                            <option value="100+">$100+</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn">Login</button>
+                <p class="switch-auth">Not a user? <a href="#" id="switchToSeller">Login as seller</a></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="sellerLoginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Seller Login</h2>
+            <form id="sellerLoginForm">
+                <div class="form-group">
+                    <label for="sellerEmail">Email</label>
+                    <input type="email" id="sellerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="sellerPassword">Password</label>
+                    <input type="password" id="sellerPassword" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <p class="switch-auth">Not a seller? <a href="#" id="switchToUser">Login as user</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Featured Products -->
+    <section id="products" class="featured-products">
+        <div class="container">
+            <h2>Featured Products</h2>
+            <div class="product-grid">
+                <!-- Products will be loaded here via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendation Section -->
+    <section class="recommendations">
+        <div class="container">
+            <h2>Recommended For You</h2>
+            <div class="recommendation-grid">
+                <!-- Recommendations will be loaded here after login -->
+                <div class="login-prompt">
+                    <p>Login to see personalized recommendations!</p>
+                    <button id="recLoginBtn" class="btn">Login Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ThriftyFinds</h3>
+                    <p>Making second-hand shopping easy and affordable since 2023.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> info@thriftyfinds.com</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 ThriftyFinds. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+   
+    <script src="script.js"></script>
+</body>
+</html>
